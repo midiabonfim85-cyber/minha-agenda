@@ -1,15 +1,15 @@
-MINHA AGENDA v3
+MINHA AGENDA v4
 
-Esta versão usa diretamente a API do Supabase para o login e banco, evitando dependência do SDK por CDN.
+Correção do fluxo "Esqueci minha senha": usa o método oficial resetPasswordForEmail do cliente Supabase para solicitar o e-mail de recuperação, com redirectTo configurado para a Vercel.
 
-Antes de testar:
-1. No Supabase, Authentication > URL Configuration.
-2. Site URL:
-https://minha-agenda-puw0rgh9f-midi-bonfim.vercel.app
-3. Redirect URL:
-https://minha-agenda-puw0rgh9f-midi-bonfim.vercel.app/**
-4. Salve.
+URL de produção:
+https://minha-agenda-three.vercel.app
 
-Importante: o serviço de e-mail padrão do Supabase tem limite de envio para testes. Não fique solicitando vários resets.
+No Supabase:
+Site URL:
+https://minha-agenda-three.vercel.app
 
-A aplicação usa somente a Publishable key. Nunca coloque service_role/secret key no navegador.
+Redirect URL:
+https://minha-agenda-three.vercel.app/**
+
+Importante: o serviço SMTP padrão do Supabase Free possui limite de envio muito baixo (atualmente 2 mensagens por hora). Depois de vários testes, aguarde o limite resetar antes de tentar novamente, ou configure SMTP próprio.
