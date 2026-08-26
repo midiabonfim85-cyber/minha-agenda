@@ -1,8 +1,15 @@
-# Minha Agenda v2
-Agenda web conectada ao Supabase.
+MINHA AGENDA v3
 
-Inclui login, leitura/criação/edição/exclusão de compromissos, calendário mensal/semanal e RLS.
+Esta versão usa diretamente a API do Supabase para o login e banco, evitando dependência do SDK por CDN.
 
-Abra `index.html` para testar. Para uso no celular e computador pela internet, publique os arquivos em um serviço de hospedagem estática como Vercel ou Netlify.
+Antes de testar:
+1. No Supabase, Authentication > URL Configuration.
+2. Site URL:
+https://minha-agenda-puw0rgh9f-midi-bonfim.vercel.app
+3. Redirect URL:
+https://minha-agenda-puw0rgh9f-midi-bonfim.vercel.app/**
+4. Salve.
 
-A chave usada é a Publishable key, apropriada para o navegador; não há service_role/secret key no projeto.
+Importante: o serviço de e-mail padrão do Supabase tem limite de envio para testes. Não fique solicitando vários resets.
+
+A aplicação usa somente a Publishable key. Nunca coloque service_role/secret key no navegador.
